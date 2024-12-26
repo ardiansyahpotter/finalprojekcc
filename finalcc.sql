@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2024 at 11:25 PM
+-- Generation Time: Dec 26, 2024 at 12:04 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `finalcc`
+-- Database: `kontol`
 --
 
 -- --------------------------------------------------------
@@ -32,15 +32,6 @@ CREATE TABLE `tb_fasilitas_umum` (
   `nama_fasilitas` varchar(50) NOT NULL,
   `gambar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tb_fasilitas_umum`
---
-
-INSERT INTO `tb_fasilitas_umum` (`id_fasilitas_umum`, `nama_fasilitas`, `gambar`) VALUES
-(7, 'kamar mandi', '325-kamarmandi.jpg'),
-(8, 'ruang meet', '206-meeten.jpg'),
-(9, 'kolam renang', '112-kolamhomtel.jpg');
 
 -- --------------------------------------------------------
 
@@ -62,9 +53,9 @@ CREATE TABLE `tb_kamar` (
 --
 
 INSERT INTO `tb_kamar` (`id_kamar`, `tipe`, `jumlah`, `harga`, `gambar`, `keterangan`) VALUES
-(33, 'DELUXE', 30, '300000', '93-hotelmewah.jpg', 'Full AC,\r\n WIFI 100 Mbps,\r\n Kamar mandi,\r\n TV 40\",\r\n Meja Rias,\r\n Pemandangan Indah                 '),
-(35, 'Double Bet', 20, '400000', '803-kasur2.jpg', 'Full AC, WIFI 100 Mbps, Kamar mandi, TV 40\", Meja Rias, Pemandangan Indah'),
-(36, 'Premium', 10, '500000', '320-kamarmewahbeutdahxixi.jpg', 'Full AC, WIFI 100 Mbps, Kamar mandi, TV 40\", Meja Rias, Pemandangan Indah');
+(37, 'museum', 100, '10.000', '274-museummalioboro.png', 'museum benteng Vredeburg yogyakarta buka dari pukul 09:00-18:00 WIB'),
+(38, 'tempat wisata', 100, '20.000', '15-kraton.png', 'Kadhaton Ngayogyakarta Adiningrat ) adalah sebuah kompleks istana di Yogyakarta kota Yogyakarta , Da'),
+(39, 'candi', 100, '30.000', '580-prambanan.png', 'Prambanan ( bahasa Jawa :  , diromanisasi :  Rara Jonggrang ) adalah sebuah kompleks kompleks candi ');
 
 -- --------------------------------------------------------
 
@@ -85,12 +76,9 @@ CREATE TABLE `tb_pengguna` (
 --
 
 INSERT INTO `tb_pengguna` (`id_pengguna`, `nama_pengguna`, `password`, `level`, `no_hp`) VALUES
-(1, 'potter', 'admin', 'Administrator', '6969'),
-(2, 'nahida', 'admin', 'Resepsionis', '6969'),
-(13, 'deaqw2', '3213', 'Tamu', '3123'),
-(16, 'potters', '111111', 'Tamu', '212312'),
-(21, 'wq', '112', '', '312'),
-(22, 'aqww', '123', 'Resepsionis', '089687138815');
+(1, 'nahida', 'admin', 'Administrator', '09'),
+(2, 'potter', 'admin', 'Resepsionis', '08'),
+(28, 'potter', '12', 'Tamu', '1');
 
 -- --------------------------------------------------------
 
@@ -111,9 +99,7 @@ CREATE TABLE `tb_tamu` (
 --
 
 INSERT INTO `tb_tamu` (`NIK`, `nama_tamu`, `alamat`, `jenis_kelamin`, `no_hp`) VALUES
-('111111', 'potters', 'ewew', 'Laki-Laki', '212312'),
-('112', 'wq', 'asfaf', 'Laki-Laki', '312'),
-('123', 'aqww', 'afafsaf', 'Perempuan', '089687138815');
+('12', 'potter', 'ewek', 'Laki-Laki', '1');
 
 -- --------------------------------------------------------
 
@@ -143,7 +129,11 @@ INSERT INTO `tb_transaksi` (`id_transaksi`, `tgl_chek_in`, `tgl_chek_out`, `id_k
 (10, '2022-05-11', '2022-05-10', 36, '111111', '1', '1', '1'),
 (11, '2022-05-10', '0000-00-00', 36, '111111', '2', '2', '1'),
 (12, '2022-05-10', '0000-00-00', 36, '123', '1', '3', '2'),
-(13, '2022-05-11', '0000-00-00', 33, '111111', '1', '2', '1');
+(13, '2022-05-11', '0000-00-00', 33, '111111', '1', '2', '1'),
+(14, '2023-12-09', '0000-00-00', 0, '12', '1', '1', '1'),
+(15, '2023-12-09', '0000-00-00', 0, '112', '1', '1', '1'),
+(16, '2023-12-09', '0000-00-00', 0, '12', '1', '1', '1'),
+(17, '2023-12-09', '0000-00-00', 37, '12', '1', '1', '1');
 
 --
 -- Indexes for dumped tables
@@ -195,19 +185,19 @@ ALTER TABLE `tb_fasilitas_umum`
 -- AUTO_INCREMENT for table `tb_kamar`
 --
 ALTER TABLE `tb_kamar`
-  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `tb_pengguna`
 --
 ALTER TABLE `tb_pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `tb_transaksi`
 --
 ALTER TABLE `tb_transaksi`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
